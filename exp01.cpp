@@ -36,6 +36,9 @@ void myDisplay() {
 	DDALine(200, -200, 200, 200);
 	Mid_Bresenham(200, 200, -200, 200);
 	DDALine(-200, 200, -200, -200);
+	/*Bresenham(-150, 200, 50, -100);
+	Bresenham(-150, -100, 150, 200);*/
+	/*Mid_Bresenham(-100, 120, 100, -150);*/
 	glFlush();
 }
 
@@ -52,7 +55,7 @@ int main(int argc, char* argv[]) {
 	glutInitWindowPosition(100, 100);
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Hello Opengl!");
-	glutDisplayFunc(&Display2);
+	glutDisplayFunc(&myDisplay);
 	glutReshapeFunc(&Reshape);
 	glutMainLoop();
 	return 0;

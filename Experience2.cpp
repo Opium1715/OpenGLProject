@@ -17,6 +17,7 @@ void Rotate(int angle) {
 	glPopMatrix();
 }
 void Zoom(int x_ratio, int y_ratio) {
+
 	glPushMatrix();
 	glScalef(x_ratio, y_ratio, 1.0);//二维变换不涉及Z轴
 	glColor3f(1.0f, 0.6f, 0.0f);
