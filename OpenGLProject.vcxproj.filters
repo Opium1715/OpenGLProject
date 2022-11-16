@@ -13,22 +13,34 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\Exp01">
+      <UniqueIdentifier>{bfb623c3-a440-481b-9353-50332e876179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Exp02">
+      <UniqueIdentifier>{1f28378f-599e-4f51-b574-c35b5292440e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Exp03">
+      <UniqueIdentifier>{d278b583-e62e-4272-a837-f6333020ac1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="exp01.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Bresenham.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Exp01</Filter>
     </ClCompile>
     <ClCompile Include="Mid_Bresenham.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Exp01</Filter>
     </ClCompile>
     <ClCompile Include="Mid_BresenhamCircle.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Exp01</Filter>
     </ClCompile>
     <ClCompile Include="Experience2.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Exp02</Filter>
+    </ClCompile>
+    <ClCompile Include="Clipping.cpp">
+      <Filter>源文件\Exp03</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

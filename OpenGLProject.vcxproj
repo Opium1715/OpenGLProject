@@ -140,7 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bresenham.cpp" />
-    <ClCompile Include="exp01.cpp" />
+    <ClCompile Include="Clipping.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Experience2.cpp" />
     <ClCompile Include="Mid_Bresenham.cpp" />
     <ClCompile Include="Mid_BresenhamCircle.cpp" />
