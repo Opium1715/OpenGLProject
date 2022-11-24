@@ -22,6 +22,9 @@
     <Filter Include="源文件\Exp03">
       <UniqueIdentifier>{d278b583-e62e-4272-a837-f6333020ac1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Test">
+      <UniqueIdentifier>{80b5ab60-fec7-48a0-8f96-47c3f38d9127}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -41,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="Clipping.cpp">
       <Filter>源文件\Exp03</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>源文件\Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

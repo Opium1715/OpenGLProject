@@ -16,8 +16,8 @@ void Bresenham(int x0,int y0,int x1,int y1) {
 
 	int uy = dy > 0 ? 1 : -1;
 
-	int k = abs(dy) /abs( dx);
-	if (k <= 1&& k>=0) {
+	/*int k = abs(dy) /abs( dx);*/
+	if (abs(dx)>abs(dy)) {
 		e = -dx;
 		x = x0;
 		y = y0;

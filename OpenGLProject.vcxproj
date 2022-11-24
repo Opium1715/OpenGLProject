@@ -145,6 +145,7 @@
     <ClCompile Include="Experience2.cpp" />
     <ClCompile Include="Mid_Bresenham.cpp" />
     <ClCompile Include="Mid_BresenhamCircle.cpp" />
+    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGl.h" />
