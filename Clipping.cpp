@@ -1,23 +1,27 @@
 #include "OpenGl.h"
-unsigned char P1;
-unsigned char P2;
+
+GLint wt = 100, wb = -100, wl = -200, wr = 200;
 vector<vector<int> > point0;
 vector<vector<int> > point1;
-void Display3() 
-{
+void DrawInnerWindow() {
+
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glBegin(GL_LINE_LOOP);
 	glColor3f(1.0, 1.0, 0.1);
-	glVertex2f(-200, -100);
-	glVertex2f(200, - 100);
-	glVertex2f(200, 100);
-	glVertex2f(-200, 100);
+	glVertex2f(wl, wb);
+	glVertex2f(wr, wb);
+	glVertex2f(wr, wt);
+	glVertex2f(wl, wt);
 	glEnd();
-	
-	glFlush();
+
 }
 
+void Display3() 
+{
+	DrawInnerWindow();
+	glFlush();
+}
 
 unsigned int Encode(int x0, int y0, int yt, int yb, int xl, int xr) {
 	/*window :
@@ -81,10 +85,12 @@ void Cohen_Sutherland(int x0,int y0,int x1,int y1,int yt,int yb,int xl,int xr )
 			break;
 		}
 		else if ((P1Code & P2Code)!=0) {
+			//简弃
 			break;
 		}
 		else if ((P1Code & P2Code) == 0) {
 			if (P1Code == 0) {
+				//交换P1与P2节点
 				swap(P1Code, P2Code);
 				swap(x0, x1);
 				swap(y0, y1);
@@ -115,7 +121,7 @@ void Cohen_Sutherland(int x0,int y0,int x1,int y1,int yt,int yb,int xl,int xr )
 						y0 = yb;
 					}
 					else
-					{
+					{//左中产生虚交点则说明可以简弃
 						break;
 					}
 				}
@@ -187,42 +193,28 @@ void Cohen_Sutherland(int x0,int y0,int x1,int y1,int yt,int yb,int xl,int xr )
 }
 
 
-void keyboard(unsigned char key,int x,int y)
+
+void keyboard(unsigned char key, int x, int y)
 {
 	if (key == 'c') {
 		cout << "cut" << endl;
-		glClearColor(0.0, 0.0, 0.0, 0.0);
-		glClear(GL_COLOR_BUFFER_BIT);
-		glBegin(GL_LINE_LOOP);
-		glColor3f(1.0, 1.0, 0.1);
-		glVertex2f(-200, -100);
-		glVertex2f(200, -100);
-		glVertex2f(200, 100);
-		glVertex2f(-200, 100);
-		glEnd();
+		DrawInnerWindow();
 		for (int i = 0; i < point0.size(); i++)
 		{
-			Cohen_Sutherland(point0[i][0], point0[i][1], point1[i][0], point1[i][1], 100, -100, -200, 200);
+			Cohen_Sutherland(point0[i][0], point0[i][1], point1[i][0], point1[i][1], wt, wb, wl, wr);
 		}
 		glFlush();
 	}
 
 	if (key == 'r') {
-		glClearColor(0.0, 0.0, 0.0, 0.0);
-		glClear(GL_COLOR_BUFFER_BIT);
-		glBegin(GL_LINE_LOOP);
-		glColor3f(1.0, 1.0, 0.1);
-		glVertex2f(-200, -100);
-		glVertex2f(200, -100);
-		glVertex2f(200, 100);
-		glVertex2f(-200, 100);
-		glEnd();
+		DrawInnerWindow();
 		for (int i = 0; i < point0.size(); i++)
 		{
 			Bresenham(point0[i][0], point0[i][1], point1[i][0], point1[i][1]);
 		}
 		glFlush();
 	}
+
 	if (key == 'p')
 	{
 		glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -238,6 +230,7 @@ void keyboard(unsigned char key,int x,int y)
 		point1.clear();
 		glFlush();
 	}
+
 	if (key == 'd')
 	{
 		cout << "draw" << endl;
@@ -253,9 +246,46 @@ void keyboard(unsigned char key,int x,int y)
 		x1v.push_back(randomX1);
 		x1v.push_back(randomY1);
 		point1.push_back(x1v);
-		cout << "(" << randomX0 << "," << randomY0 << ")"<<" ";
-		cout << "(" << randomX1 << "," << randomY1 << ")"<<endl;
+		cout << "(" << randomX0 << "," << randomY0 << ")" << " ";
+		cout << "(" << randomX1 << "," << randomY1 << ")" << endl;
 		Bresenham(randomX0, randomY0, randomX1, randomY1);
 		glFlush();
 	}
 }
+
+void SpecialKey(int key, int x, int y)
+{
+	if (key ==GLUT_KEY_UP)
+	{
+		cout << "up" << endl;
+		wb++;
+		wt++;
+	}
+	if (key == GLUT_KEY_DOWN)
+	{
+		cout << "down" << endl;
+		wb--;
+		wt--;
+	}
+	if (key == GLUT_KEY_LEFT)
+	{
+		cout << "left" << endl;
+		wl--;
+		wr--;
+	}
+	if (key == GLUT_KEY_RIGHT)
+	{
+		cout << "right" << endl;
+		wl++;
+		wr++;
+	}
+	DrawInnerWindow();
+	cout << "cut" << endl;
+	DrawInnerWindow();
+	for (int i = 0; i < point0.size(); i++)
+	{
+		Cohen_Sutherland(point0[i][0], point0[i][1], point1[i][0], point1[i][1], wt, wb, wl, wr);
+	}
+	glFlush();
+}
+

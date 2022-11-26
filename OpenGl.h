@@ -14,3 +14,4 @@ void Display2();
 void Display3();
 void Cohen_Sutherland(int x0, int y0, int x1, int y1, int yt, int yb, int xl, int xr);
 void keyboard(unsigned char key, int x, int y);
+void SpecialKey(int key, int x, int y);
