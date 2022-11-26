@@ -97,7 +97,7 @@ void Cohen_Sutherland(int x0,int y0,int x1,int y1,int yt,int yb,int xl,int xr )
 				cout<< "与左边界交点：" << newy << endl;
 				unsigned int Scode = Encode(xl, newy, yt, yb, xl, xr);
 				//判断求得的交点是否为实交点
-				if(Scode != 0){
+				if(Scode != 0){//虚点
 					if ((P1Code & 0x08) == 8) {
 						//left top
 						int newx = int((x0 + ((double)yt - y0) / k) + 0.5);
@@ -113,6 +113,10 @@ void Cohen_Sutherland(int x0,int y0,int x1,int y1,int yt,int yb,int xl,int xr )
 						P1Code = Encode(newx, yb, yt, yb, xl, xr);
 						x0 = newx;
 						y0 = yb;
+					}
+					else
+					{
+						break;
 					}
 				}
 				else
@@ -146,6 +150,10 @@ void Cohen_Sutherland(int x0,int y0,int x1,int y1,int yt,int yb,int xl,int xr )
 						x0 = newx;
 						y0 = yb;
 					}
+					else
+					{
+						break;
+					}
 				}
 				else
 				{
@@ -171,7 +179,7 @@ void Cohen_Sutherland(int x0,int y0,int x1,int y1,int yt,int yb,int xl,int xr )
 					cout << "与下边界交点：" << newx << endl;
 					P1Code = Encode(newx, yb, yt, yb, xl, xr);
 					x0 = newx;
-					y0 = yt;
+					y0 = yb;
 				}
 			}
 		}
