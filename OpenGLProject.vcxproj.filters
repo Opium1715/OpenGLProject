@@ -48,6 +48,9 @@
     <ClCompile Include="test.cpp">
       <Filter>源文件\Test</Filter>
     </ClCompile>
+    <ClCompile Include="liang_Barsky.cpp">
+      <Filter>源文件\Exp03</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGl.h">
