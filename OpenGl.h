@@ -15,3 +15,4 @@ void Display3();
 void Cohen_Sutherland(int x0, int y0, int x1, int y1, int yt, int yb, int xl, int xr);
 void keyboard(unsigned char key, int x, int y);
 void SpecialKey(int key, int x, int y);
+void Liang_Barsky(double x1, double y1, double x2, double y2, double yt, double yb, double xl, double xr);
