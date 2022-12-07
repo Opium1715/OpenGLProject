@@ -1,14 +1,4 @@
 #include "OpenGl.h"
-class Point
-{
-public:
-	Point(int x,int y);
-	int getX();
-	int getY();
-private:
-	int x;
-	int y;
-};
 
 Point::Point(int x, int y)
 {
@@ -38,7 +28,7 @@ double computeBezier(double t, double x, double y,double z, double w ) {
 }
 
 void Bezier() {
-	double accuracy = 1.0/500;
+	double accuracy = 1.0/10000;
 	for (int i = 1; i <= 1/accuracy; i++)
 	{
 		double t = accuracy*i;
@@ -60,7 +50,7 @@ void Bezier() {
 
 
 void myMouse(int button, int state, int x,int y) {
-	if (button == GLUT_LEFT_BUTTON&&state == GLUT_DOWN&&points.size()<4)
+	if (button == GLUT_LEFT_BUTTON&&state == GLUT_DOWN)
 	{
 		cout << " (" << x << " , " << y << ") " << endl;
 		putPixel(x, y);
@@ -76,9 +66,10 @@ void myMouse(int button, int state, int x,int y) {
 		}
 		glEnd();
 
-		if (points.size()==4)
+		if (points.size()>=4)
 		{
-			Bezier();
+			/*Bezier();*/
+			B_spline();
 		}
 		glFlush();
 	}

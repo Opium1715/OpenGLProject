@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Bezier.cpp" />
     <ClCompile Include="Bresenham.cpp" />
+    <ClCompile Include="B_spline.cpp" />
     <ClCompile Include="Clipping.cpp" />
     <ClCompile Include="liang_Barsky.cpp" />
     <ClCompile Include="main.cpp" />

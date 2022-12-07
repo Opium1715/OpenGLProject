@@ -57,6 +57,9 @@
     <ClCompile Include="Bezier.cpp">
       <Filter>源文件\Exp04</Filter>
     </ClCompile>
+    <ClCompile Include="B_spline.cpp">
+      <Filter>源文件\Exp04</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGl.h">

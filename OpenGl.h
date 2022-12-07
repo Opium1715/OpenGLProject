@@ -20,3 +20,16 @@ void Liang_Barsky(double x1, double y1, double x2, double y2, double yt, double 
 void Display4();
 void myMouse(int button, int state, int x, int y);
 void Exp4Reshape(int w, int h);
+void B_spline();
+
+
+class Point
+{
+public:
+	Point(int x, int y);
+	int getX();
+	int getY();
+private:
+	int x;
+	int y;
+};
