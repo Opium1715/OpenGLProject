@@ -286,7 +286,8 @@ void SpecialKey(int key, int x, int y)
 	DrawInnerWindow();
 	for (int i = 0; i < point0.size(); i++)
 	{
-		Cohen_Sutherland(point0[i][0], point0[i][1], point1[i][0], point1[i][1], wt, wb, wl, wr);
+		/*Cohen_Sutherland(point0[i][0], point0[i][1], point1[i][0], point1[i][1], wt, wb, wl, wr);*/
+		Liang_Barsky(point0[i][0], point0[i][1], point1[i][0], point1[i][1], wt, wb, wl, wr);
 	}
 	glFlush();
 }

@@ -1,7 +1,7 @@
 #include "OpenGl.h"
 int LBlineClip(double p,double q,double &umax,double &umin) {
 	double u = 0.0;
-	if (p < 0.0) {
+	if (p < 0.0) {//计算umax,起点处比例
 		u = q / p;
 		if (u>umin) {
 			return 0;
@@ -11,7 +11,7 @@ int LBlineClip(double p,double q,double &umax,double &umin) {
 		}
 	}
 	else if(p>0.0)
-	{
+	{//计算umin,终点处比例
 		u = q / p;
 		if (u < umax) {
 			return 0;

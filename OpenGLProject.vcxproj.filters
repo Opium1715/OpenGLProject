@@ -25,6 +25,9 @@
     <Filter Include="源文件\Test">
       <UniqueIdentifier>{80b5ab60-fec7-48a0-8f96-47c3f38d9127}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Exp04">
+      <UniqueIdentifier>{40f6b39e-12e0-468f-bf22-2ac31eeaeefa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -50,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="liang_Barsky.cpp">
       <Filter>源文件\Exp03</Filter>
+    </ClCompile>
+    <ClCompile Include="Bezier.cpp">
+      <Filter>源文件\Exp04</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

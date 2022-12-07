@@ -52,13 +52,14 @@ void Reshape(int w, int h)
 int main(int argc, char* argv[]) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
-	glutInitWindowPosition(100, 100);
+	glutInitWindowPosition(200, 200);
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Hello Opengl!");
-	glutDisplayFunc(&Display3);
-	glutReshapeFunc(&Reshape);
-	glutKeyboardFunc(&keyboard);
-	glutSpecialFunc(&SpecialKey);
+	glutDisplayFunc(&Display4);
+	glutReshapeFunc(&Exp4Reshape);
+	//glutKeyboardFunc(&keyboard);
+	//glutSpecialFunc(&SpecialKey);
+	glutMouseFunc(&myMouse);
 	glutMainLoop();
 	return 0;
 }
