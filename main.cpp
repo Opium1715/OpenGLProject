@@ -68,7 +68,7 @@ int main(int argc, char* argv[]) {
 	glutReshapeFunc(&Exp4Reshape);
 	//glutKeyboardFunc(&keyboard);
 	//glutSpecialFunc(&SpecialKey);
-	glutMouseFunc(&Mouse);
+	glutMouseFunc(&myMouse);
 	
 	myMenu();
 	glutMainLoop();

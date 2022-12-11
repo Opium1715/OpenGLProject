@@ -152,6 +152,7 @@
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="rectangle.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGl.h" />

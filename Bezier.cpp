@@ -71,7 +71,7 @@ void myMouse(int button, int state, int x,int y) {
 			/*Bezier();*/
 			B_spline();
 		}
-		glFlush();
+		glutSwapBuffers();
 	}
 
 	if (button == GLUT_MIDDLE_BUTTON&&state==GLUT_DOWN)

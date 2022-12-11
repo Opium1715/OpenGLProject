@@ -6,6 +6,16 @@
 #include<vector>
 #include<cstdlib>
 #include<algorithm>
+
+#define PI acos(-1)
+#define rect 1
+#define triangle 2
+#define polygon 3
+#define circular 4
+#define line 5
+#define bezier 6
+#define b_spline 7
+
 using namespace std;
 void putPixel(int x, int y);
 void Bresenham(int x0, int y0, int x1, int y1);
@@ -29,8 +39,11 @@ void SubMenuHandler1(int option);
 void SubMenuHandler2(int option);
 void SubMenuHandler3(int option);
 void myMenu();
-void Motion(int x, int y);
-void Mouse(int button, int state, int x, int y);
+//void Motion(int x, int y);
+//void Mouse(int button, int state, int x, int y);
+void RectMouse(int button, int state, int x, int y);
+void TriMouse(int button, int state, int x, int y);
+
 
 
 class Point

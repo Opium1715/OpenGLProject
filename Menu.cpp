@@ -30,10 +30,13 @@ void SubMenuHandler1(int option) {
 	{
 		case 1: {
 			cout << "¾ØÐÎ" << endl;
+			glutMouseFunc(&RectMouse);
 			mode = 1;
 		}break;
 		case 2: {
-			cout << "menu 2" << endl;
+			cout << "Èý½ÇÐÎ" << endl;
+			glutMouseFunc(&TriMouse);
+			mode = 2;
 		}break;
 		case 3: {
 			cout << "menu 3" << endl;
