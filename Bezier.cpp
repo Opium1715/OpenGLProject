@@ -28,7 +28,7 @@ double computeBezier(double t, double x, double y,double z, double w ) {
 }
 
 void Bezier() {
-	double accuracy = 1.0/10000;
+	double accuracy = 1.0/1000;
 	for (int i = 1; i <= 1/accuracy; i++)
 	{
 		double t = accuracy*i;
@@ -74,7 +74,7 @@ void myMouse(int button, int state, int x,int y) {
 		glFlush();
 	}
 
-	if (button == GLUT_RIGHT_BUTTON&&state==GLUT_DOWN)
+	if (button == GLUT_MIDDLE_BUTTON&&state==GLUT_DOWN)
 	{
 		cout << "清空点集，重新画点" << endl;
 		points.clear();

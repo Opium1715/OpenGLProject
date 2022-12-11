@@ -146,8 +146,11 @@
     <ClCompile Include="liang_Barsky.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Experience2.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Mid_Bresenham.cpp" />
     <ClCompile Include="Mid_BresenhamCircle.cpp" />
+    <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="rectangle.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>

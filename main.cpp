@@ -1,4 +1,6 @@
 #include "OpenGl.h"
+extern GLfloat red = 1.0, green = 1.0, blue = 1.0;
+extern int mode = 0;
 
 void putPixel(int x, int y) {
 	glPointSize(2);
@@ -42,6 +44,13 @@ void myDisplay() {
 	glFlush();
 }
 
+void Display() {
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT);
+	glutSwapBuffers();
+}
+
+
 void Reshape(int w, int h)
 {
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);//改变显示区域，起始位置为客户端窗口左下角（非坐标原点）
@@ -51,15 +60,17 @@ void Reshape(int w, int h)
 }
 int main(int argc, char* argv[]) {
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
+	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 	glutInitWindowPosition(200, 200);
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Hello Opengl!");
-	glutDisplayFunc(&Display4);
+	glutDisplayFunc(&Display);
 	glutReshapeFunc(&Exp4Reshape);
 	//glutKeyboardFunc(&keyboard);
 	//glutSpecialFunc(&SpecialKey);
-	glutMouseFunc(&myMouse);
+	glutMouseFunc(&Mouse);
+	
+	myMenu();
 	glutMainLoop();
 	return 0;
 }

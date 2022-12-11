@@ -28,6 +28,12 @@
     <Filter Include="源文件\Exp04">
       <UniqueIdentifier>{40f6b39e-12e0-468f-bf22-2ac31eeaeefa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\UI">
+      <UniqueIdentifier>{d6216fbe-9bf4-44a5-8eb1-a302bafedd4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\BasicGraphic">
+      <UniqueIdentifier>{7313076f-56f6-45f2-84ad-c14c4dd66286}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -60,10 +66,19 @@
     <ClCompile Include="B_spline.cpp">
       <Filter>源文件\Exp04</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>源文件\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="rectangle.cpp">
+      <Filter>源文件\BasicGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>源文件\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGl.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

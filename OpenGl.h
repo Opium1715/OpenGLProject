@@ -21,6 +21,16 @@ void Display4();
 void myMouse(int button, int state, int x, int y);
 void Exp4Reshape(int w, int h);
 void B_spline();
+void drawRect(int x0, int y0, int x1, int y1);
+void RectDisplay();
+
+void MainMenuHandler(int option);
+void SubMenuHandler1(int option);
+void SubMenuHandler2(int option);
+void SubMenuHandler3(int option);
+void myMenu();
+void Motion(int x, int y);
+void Mouse(int button, int state, int x, int y);
 
 
 class Point
@@ -33,3 +43,7 @@ private:
 	int x;
 	int y;
 };
+
+
+extern GLfloat red , green, blue;//初始默认颜色
+extern int mode;//初始模式
