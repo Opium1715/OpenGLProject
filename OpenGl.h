@@ -47,6 +47,7 @@ void myMenu();
 //void Mouse(int button, int state, int x, int y);
 void RectMouse(int button, int state, int x, int y);
 void TriMouse(int button, int state, int x, int y);
+void PolyMouse(int button, int state, int x, int y);
 
 void ClipSpecialKey(int key, int x, int y);
 

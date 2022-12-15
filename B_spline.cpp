@@ -6,7 +6,7 @@ double computeB_basic(double t, double a, double b ,double c, double d) {
 }
 
 void B_spline() {
-	double accurancy = 1.0 / 100000;
+	double accurancy = 1.0 / 10000;
 	for (int point = 0; point < points.size()-3; point++)
 	{
 		cout << point << endl;

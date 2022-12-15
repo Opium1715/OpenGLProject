@@ -40,8 +40,8 @@ void RectMouse(int button, int state, int x, int y) {
 				cout << "ÆğÊ¼×ø±ê=" << " (" << x << " , " << y << ") " << endl;
 				glutMotionFunc(&RectMotion);
 				glutDisplayFunc(&RectDisplay);
-				drawRect(beginX, beginY, beginX, beginY);
-				
+				//drawRect(beginX, beginY, beginX, beginY);
+				RectDisplay();
 			}
 		}
 		if (state == GLUT_UP)

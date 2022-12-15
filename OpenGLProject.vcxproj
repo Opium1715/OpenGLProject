@@ -151,6 +151,7 @@
     <ClCompile Include="Mid_Bresenham.cpp" />
     <ClCompile Include="Mid_BresenhamCircle.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="rectangle.cpp" />
     <ClCompile Include="refresh.cpp" />
     <ClCompile Include="test.cpp" />

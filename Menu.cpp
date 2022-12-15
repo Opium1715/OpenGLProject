@@ -1,6 +1,7 @@
 #include "OpenGl.h"
 extern int mode;
 extern vector<Graph> graphList;
+extern GLfloat red, green, blue;
 
 void MainMenuHandler(int option) {
 
@@ -38,15 +39,17 @@ void SubMenuHandler1(int option) {
 		case 1: {
 			cout << "矩形" << endl;
 			glutMouseFunc(&RectMouse);
-			mode = 1;
+			mode = rect;
 		}break;
 		case 2: {
 			cout << "三角形" << endl;
 			glutMouseFunc(&TriMouse);
-			mode = 2;
+			mode = triangle;
 		}break;
 		case 3: {
-			cout << "menu 3" << endl;
+			cout << "任意多边形" << endl;
+			glutMouseFunc(&PolyMouse);
+			mode = polygon;
 		}break;
 		case 4: {
 			cout << "menu 4" << endl;
@@ -86,19 +89,34 @@ void SubMenuHandler3(int option) {
 	switch (option)
 	{
 	case 1: {
-		cout << "menu 1" << endl;
+		cout << "黄色" << endl;
+		red = 1.0;
+		green = 1.0;
+		blue = 0.0;
 	}break;
 	case 2: {
-		cout << "menu 2" << endl;
+		cout << "绿色" << endl;
+		red = 0.0;
+		green = 0.5;
+		blue = 0.0;
 	}break;
 	case 3: {
-		cout << "menu 3" << endl;
+		cout << "红色" << endl;
+		red = 1.0;
+		green = 0.0;
+		blue = 0.0;
 	}break;
 	case 4: {
-		cout << "menu 4" << endl;
+		cout << "蓝色" << endl;
+		red = 0.0;
+		green = 0.0;
+		blue = 1.0;
 	}break;
 	case 5: {
-		cout << "menu 5" << endl;
+		cout << "白色" << endl;
+		red = 1.0;
+		green = 1.0;
+		blue = 1.0;
 	}break;
 	default:
 		break;

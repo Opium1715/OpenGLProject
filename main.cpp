@@ -56,8 +56,27 @@ void myDisplay() {
 void Display() {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT);
+	
+
+	////test color
+	//glColor3f(red, green, blue);
+	//glRectd(100, 100, 200, 200);
+
+	//red = 1.0, green = 0.0, blue = 0.0;
+	//glColor3f(red, green, blue);
+	//glRecti(0, 0, 100, 100);
+
+
+	//test Polygon
+	
+	glBegin(GL_POLYGON);
+	glColor3f(255, 0, 0); glVertex3f(0.0f, 25.0f, 0.0f);
+	glColor3f(0, 0, 255); glVertex3f(50.5f, 29.5f, 0.0f);
+	glColor3f(0, 255, 0); glVertex3f(100.0f, 65.0f, 0.0f);
+	glEnd();
 	glutSwapBuffers();
 }
+
 
 
 void Reshape(int w, int h)

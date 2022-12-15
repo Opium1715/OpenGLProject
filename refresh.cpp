@@ -29,6 +29,16 @@ void Refresh() {
 			drawtri(ps[0].getX(), ps[0].getY(), ps[1].getX(), ps[1].getY());
 			cout << "重绘结束" << endl;
 		}break;
+		case 3: {
+			cout<<"重绘多边形" << endl;
+			float* c = graphList[i].getRGB();
+			red = c[0];
+			green = c[1];
+			blue = c[2];
+			vector<Point> ps = graphList[i].getPoints();
+			drawtri(ps[0].getX(), ps[0].getY(), ps[1].getX(), ps[1].getY());
+			cout << "重绘结束" << endl;
+		}break;
 		default:
 			break;
 		}
