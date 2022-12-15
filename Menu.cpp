@@ -1,14 +1,21 @@
 #include "OpenGl.h"
 extern int mode;
+extern vector<Graph> graphList;
+
 void MainMenuHandler(int option) {
 
 	switch (option)
 	{
 	case 1: {
-		cout << "menu 1" << endl;
+		cout << "裁剪线段" << endl;
+		glutSpecialFunc(&ClipSpecialKey);
+		mode = Clip;
 	}break;
 	case 2: {
-		cout << "menu 2" << endl;
+		cout << "清空图形" << endl;
+		glutDisplayFunc(&Display);
+		Display();
+		graphList.clear();
 	}break;
 	case 3: {
 		cout << "menu 3" << endl;
@@ -130,6 +137,7 @@ void myMenu() {
 	int mianmenu = glutCreateMenu(MainMenuHandler);
 	//创建菜单项
 	glutAddMenuEntry("裁切", 1);
+	glutAddMenuEntry("清空画板",2);
 	glutAddSubMenu("基础图形", submenu1);
 	glutAddSubMenu("几何变换模式", submenu2);
 	glutAddSubMenu("颜色变换", submenu3);

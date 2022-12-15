@@ -15,6 +15,18 @@ int Point::getY() {
 	return this->y;
 }
 
+void Point::setX(int newx)
+{
+	this->x = newx;
+}
+
+void Point::setY(int newy)
+{
+	this->y = newy;
+}
+
+
+
 vector<Point> points;
 void Display4() {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -84,7 +96,9 @@ void myMouse(int button, int state, int x,int y) {
 
 void Exp4Reshape(int w,int h) {
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);//改变显示区域，起始位置为客户端窗口左下角（非坐标原点）
+	//glViewport(100, 100, 600, 400);
 	glMatrixMode(GL_PROJECTION);//修改投影矩阵
 	glLoadIdentity();//导入单位阵
+	//gluOrtho2D(100.0, 600.0, 400.0, 100.0);
 	gluOrtho2D(0.0, 800.0, 600.0, 0.0);//反转y方向，使屏幕坐标系符合操作逻辑
 }

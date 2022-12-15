@@ -15,8 +15,11 @@
 #define line 5
 #define bezier 6
 #define b_spline 7
+#define Clip 8
 
 using namespace std;
+
+void Display();
 void putPixel(int x, int y);
 void Bresenham(int x0, int y0, int x1, int y1);
 void Mid_Bresenham(int x0, int y0, int x1, int y1);
@@ -33,6 +36,7 @@ void Exp4Reshape(int w, int h);
 void B_spline();
 void drawRect(int x0, int y0, int x1, int y1);
 void RectDisplay();
+void drawtri(int x0, int y0, int x1, int y1);
 
 void MainMenuHandler(int option);
 void SubMenuHandler1(int option);
@@ -44,6 +48,10 @@ void myMenu();
 void RectMouse(int button, int state, int x, int y);
 void TriMouse(int button, int state, int x, int y);
 
+void ClipSpecialKey(int key, int x, int y);
+
+void Refresh();
+
 
 
 class Point
@@ -52,11 +60,46 @@ public:
 	Point(int x, int y);
 	int getX();
 	int getY();
+	void setX(int newx);
+	void setY(int newy);
 private:
 	int x;
 	int y;
 };
 
+class Graph {
+public:
+	Graph(std::vector <Point>&  points, int type,int R,int G,int B);
+	int getType() {
+		return this->type;
+	}
+	void setType(int type) {
+		this->type = type;
+	}
+	float* getRGB() {
+		float color[3];
+		color[0] = this->R;
+		color[1] = this->G;
+		color[2] = this->B;
+		return  color;
+	}
+	void setRGB(int R, int G, int B) {
+		this->R = R;
+		this->G = G;
+		this->B = B;
+	}
+	vector<Point> getPoints() {
+		return this->points;
+	}
 
+private:
+	vector<Point> points;
+	int type;
+	int R;
+	int G;
+	int B;
+};
+
+extern vector<Graph> graphList;
 extern GLfloat red , green, blue;//初始默认颜色
 extern int mode;//初始模式

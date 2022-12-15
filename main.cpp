@@ -1,7 +1,7 @@
 #include "OpenGl.h"
 extern GLfloat red = 1.0, green = 1.0, blue = 1.0;
 extern int mode = 0;
-
+extern vector<Graph> graphList;
 void putPixel(int x, int y) {
 	glPointSize(2);
 	glBegin(GL_POINTS);
@@ -25,6 +25,15 @@ void DDALine(int x0, int y0, int x1, int y1) {
 		x += xIncre;
 		y += yIncre;
 	}
+}
+
+
+Graph::Graph(std::vector <Point>&  points, int type, int R, int G, int B) {
+	this->points = points;
+	this->type = type;
+	this->R = R;
+	this->G = G;
+	this->B = B;
 }
 
 

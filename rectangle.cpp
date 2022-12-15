@@ -6,14 +6,14 @@
 void drawRect(int x0,int y0,int x1,int y1) {
 	glColor3f(red, green, blue);
 	glRectd(x0, y0, x1, y1);
-	glutSwapBuffers();
-	glutPostRedisplay();
 }
 
 void RectDisplay() {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	drawRect(beginX, beginY, endX, endY);
+	Refresh();
+	glutSwapBuffers();
 }
 
 void RectMotion(int x, int y) {
@@ -22,7 +22,8 @@ void RectMotion(int x, int y) {
 		cout << "移动坐标到" << " (" << x << " , " << y << ") " << endl;
 		endX = x;
 		endY = y;
-		drawRect(beginX, beginY, x, y);
+		RectDisplay();
+		glutPostRedisplay();
 	}
 }
 
@@ -40,12 +41,18 @@ void RectMouse(int button, int state, int x, int y) {
 				glutMotionFunc(&RectMotion);
 				glutDisplayFunc(&RectDisplay);
 				drawRect(beginX, beginY, beginX, beginY);
+				
 			}
 		}
 		if (state == GLUT_UP)
 		{
 				cout << "恢复初始" << endl;
 				mode = 0;
+				//记录最终确定的点
+				vector<Point> p;
+				p.push_back(Point(beginX, beginY));
+				p.push_back(Point(endX, endY));
+				graphList.push_back(Graph(p, rect, red, green, blue));
 		}
 	}
 }
