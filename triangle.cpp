@@ -3,10 +3,11 @@
 extern int beginX, beginY;
 extern int endX, endY;
 extern GLfloat red, green, blue;
+extern float* c;
 
 vector<Graph> graphList;
 void drawtri(int x0, int y0, int x1, int y1) {
-	glColor3f(red, green, blue);
+	//glColor3f(c[0], c[1], c[2]);
 	glBegin(GL_TRIANGLES);
 	glVertex2d(x0, y0);
 	glVertex2d(((double)x1 + x0) / 2, (((double)y0 + y1) / 2) - (((double)x1 - x0) * sin(60 * PI / 180)));

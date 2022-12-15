@@ -52,11 +52,20 @@ void SubMenuHandler1(int option) {
 			mode = polygon;
 		}break;
 		case 4: {
-			cout << "menu 4" << endl;
+			cout << "圆形" << endl;
 		}break;
 		case 5: {
-			cout << "menu 5" << endl;
+			cout << "直线" << endl;
+			glutMouseFunc(&lineMouse);
+			mode = line;
 		}break;
+		case 6: {
+			cout << "贝塞尔曲线" << endl;
+		}break;
+		case 7: {
+			cout << "B样条曲线" << endl;
+		}break;
+	
 		default:
 			break;
 		}

@@ -1,6 +1,8 @@
 #include"OpenGl.h"
 
+extern float* c;
 vector<Point> polyPoints;//临时存储多边形信息
+
 void drawPoly() {
 	
 	glBegin(GL_POLYGON);

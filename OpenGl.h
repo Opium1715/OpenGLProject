@@ -37,6 +37,7 @@ void B_spline();
 void drawRect(int x0, int y0, int x1, int y1);
 void RectDisplay();
 void drawtri(int x0, int y0, int x1, int y1);
+void drawLine(int x0, int y0, int x1, int y1);
 
 void MainMenuHandler(int option);
 void SubMenuHandler1(int option);
@@ -48,6 +49,7 @@ void myMenu();
 void RectMouse(int button, int state, int x, int y);
 void TriMouse(int button, int state, int x, int y);
 void PolyMouse(int button, int state, int x, int y);
+void lineMouse(int button, int state, int x, int y);
 
 void ClipSpecialKey(int key, int x, int y);
 
@@ -77,7 +79,7 @@ public:
 	void setType(int type) {
 		this->type = type;
 	}
-	float* getRGB() {
+	const float* getRGB() {
 		float color[3];
 		color[0] = this->R;
 		color[1] = this->G;

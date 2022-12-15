@@ -87,6 +87,9 @@
     <ClCompile Include="Polygon.cpp">
       <Filter>源文件\BasicGraphic</Filter>
     </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>源文件\BasicGraphic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGl.h">

@@ -145,6 +145,7 @@
     <ClCompile Include="Clipping.cpp" />
     <ClCompile Include="KeyBoard.cpp" />
     <ClCompile Include="liang_Barsky.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Experience2.cpp" />
     <ClCompile Include="Menu.cpp" />
