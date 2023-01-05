@@ -1,8 +1,10 @@
 #include "OpenGl.h"
 
-GLint wt = 100, wb = -100, wl = -200, wr = 200;
+//GLint wt = 100, wb = -100, wl = -200, wr = 200;
+GLint wt = 500, wb = 200, wl = 200, wr = 600;
 vector<vector<int> > point0;
 vector<vector<int> > point1;
+
 void DrawInnerWindow() {
 
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -20,7 +22,7 @@ void DrawInnerWindow() {
 void Display3() 
 {
 	DrawInnerWindow();
-	glFlush();
+	glutSwapBuffers();
 }
 
 unsigned int Encode(int x0, int y0, int yt, int yb, int xl, int xr) {
@@ -289,6 +291,6 @@ void SpecialKey(int key, int x, int y)
 		/*Cohen_Sutherland(point0[i][0], point0[i][1], point1[i][0], point1[i][1], wt, wb, wl, wr);*/
 		Liang_Barsky(point0[i][0], point0[i][1], point1[i][0], point1[i][1], wt, wb, wl, wr);
 	}
-	glFlush();
+	glutSwapBuffers();
 }
 

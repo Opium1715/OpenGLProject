@@ -142,7 +142,9 @@
     <ClCompile Include="Bezier.cpp" />
     <ClCompile Include="Bresenham.cpp" />
     <ClCompile Include="B_spline.cpp" />
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Clipping.cpp" />
+    <ClCompile Include="FileSave.cpp" />
     <ClCompile Include="KeyBoard.cpp" />
     <ClCompile Include="liang_Barsky.cpp" />
     <ClCompile Include="Line.cpp" />
@@ -155,6 +157,7 @@
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="rectangle.cpp" />
     <ClCompile Include="refresh.cpp" />
+    <ClCompile Include="GTImpl.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="triangle.cpp" />
   </ItemGroup>

@@ -2,10 +2,14 @@
 extern GLfloat red = 1.0, green = 1.0, blue = 1.0;
 extern int mode = 0;
 extern vector<Graph> graphList;
+
+float ct = 1;
+
 void putPixel(int x, int y) {
 	glPointSize(2);
 	glBegin(GL_POINTS);
-	glColor3f(1.0f, 1.0f, 1.0f);
+	//glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(red,green,blue);
 	glVertex2i(x, y);
 	glEnd();
 }
@@ -28,13 +32,6 @@ void DDALine(int x0, int y0, int x1, int y1) {
 }
 
 
-Graph::Graph(std::vector <Point>&  points, int type, int R, int G, int B) {
-	this->points = points;
-	this->type = type;
-	this->R = R;
-	this->G = G;
-	this->B = B;
-}
 
 
 //实验一的调用显示内容
@@ -57,24 +54,33 @@ void Display() {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	
-
-	////test color
-	//glColor3f(red, green, blue);
-	//glRectd(100, 100, 200, 200);
-
-	//red = 1.0, green = 0.0, blue = 0.0;
-	//glColor3f(red, green, blue);
-	//glRecti(0, 0, 100, 100);
-
-
 	//test Polygon
+	cout<<"scale" << endl;
+	glPushMatrix();
 	
-	glBegin(GL_POLYGON);
-	glColor3f(255, 0, 0); glVertex3f(0.0f, 25.0f, 0.0f);
-	glColor3f(0, 0, 255); glVertex3f(50.5f, 29.5f, 0.0f);
-	glColor3f(0, 255, 0); glVertex3f(100.0f, 65.0f, 0.0f);
-	glEnd();
+	int x0 = 100, y0 = 100, x1 = 200, y1 = 200;
+	glColor3f(0.5, 0.5, 0.5);
+	glRectd(x0, y0, x1, y1);
+	glLoadIdentity();
+	float m[16];
+	glTranslatef(-100.0, -100.0, 0.0);
+	glGetFloatv(GL_PROJECTION_MATRIX, m);
+	x0 += m[12], y0 += m[13];
+	x1 += m[12], y1 += m[13];
+	glPopMatrix();
+	//glPushMatrix();
+	////
+	//ct -= 0.01;
+	//glTranslatef(150, 150.0, 0.0);
+	//glScalef(ct, ct, 1.0);
+	////glRotatef(ct++, 0.0, 0.0, 1.0);
+	//glGetFloatv(GL_PROJECTION_MATRIX, m);
+	//glColor3f(1.5,1.5,0.5);
+	//glRectd(x0, y0, x1, y1);
+	//glPopMatrix();
+	//glGetFloatv(GL_PROJECTION_MATRIX, m);
 	glutSwapBuffers();
+	glutPostRedisplay();
 }
 
 
@@ -96,7 +102,7 @@ int main(int argc, char* argv[]) {
 	glutReshapeFunc(&Exp4Reshape);
 	//glutKeyboardFunc(&keyboard);
 	//glutSpecialFunc(&SpecialKey);
-	glutMouseFunc(&myMouse);
+	//glutMouseFunc(&myMouse);
 	
 	myMenu();
 	glutMainLoop();

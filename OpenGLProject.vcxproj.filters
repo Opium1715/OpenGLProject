@@ -34,6 +34,9 @@
     <Filter Include="源文件\BasicGraphic">
       <UniqueIdentifier>{7313076f-56f6-45f2-84ad-c14c4dd66286}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\GT">
+      <UniqueIdentifier>{8b390f37-ecd7-4174-8c43-100a5575b3eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -89,6 +92,15 @@
     </ClCompile>
     <ClCompile Include="Line.cpp">
       <Filter>源文件\BasicGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>源文件\BasicGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="GTImpl.cpp">
+      <Filter>源文件\GT</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSave.cpp">
+      <Filter>源文件\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

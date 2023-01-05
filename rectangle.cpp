@@ -29,11 +29,10 @@ void RectMotion(int x, int y) {
 }
 
 void RectMouse(int button, int state, int x, int y) {
-	if (button == GLUT_LEFT_BUTTON)
-	{
-		if (state == GLUT_DOWN)
+	if (mode == rect) {
+		if (button == GLUT_LEFT_BUTTON)
 		{
-			if (mode == rect)
+			if (state == GLUT_DOWN)
 			{
 				cout << "矩形绘画" << endl;
 				beginX = x, beginY = y;
@@ -44,9 +43,8 @@ void RectMouse(int button, int state, int x, int y) {
 				//drawRect(beginX, beginY, beginX, beginY);
 				RectDisplay();
 			}
-		}
-		if (state == GLUT_UP)
-		{
+			if (state == GLUT_UP)
+			{
 				cout << "恢复初始" << endl;
 				mode = 0;
 				//记录最终确定的点
@@ -54,6 +52,7 @@ void RectMouse(int button, int state, int x, int y) {
 				p.push_back(Point(beginX, beginY));
 				p.push_back(Point(endX, endY));
 				graphList.push_back(Graph(p, rect, red, green, blue));
+			}
 		}
 	}
 }

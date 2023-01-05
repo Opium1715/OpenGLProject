@@ -6,7 +6,7 @@ double computeB_basic(double t, double a, double b ,double c, double d) {
 }
 
 void B_spline() {
-	double accurancy = 1.0 / 10000;
+	double accurancy = 1.0 / 900;
 	for (int point = 0; point < points.size()-3; point++)
 	{
 		cout << point << endl;
@@ -28,4 +28,10 @@ void B_spline() {
 			putPixel(int(x+0.5), int(y+0.5));
 		}
 	}
+}
+
+void drawB_spline(std::vector <Point>& ps) {
+	points = ps;
+	B_spline();
+	points.clear();
 }

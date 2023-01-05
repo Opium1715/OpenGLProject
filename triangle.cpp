@@ -60,8 +60,12 @@ void TriMouse(int button, int state, int x, int y) {
 				glutDisplayFunc(&TriangleDisplay);
 				TriangleDisplay();
 			}
+			else if (mode == rotate)
+			{
+
+			}
 		}
-		if (state == GLUT_UP)
+		if (state == GLUT_UP && mode == triangle)
 		{
 			cout << "»Ö¸´³õÊ¼" << endl;
 			mode = 0;

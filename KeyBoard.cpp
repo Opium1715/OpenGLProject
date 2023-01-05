@@ -28,26 +28,26 @@ void ClipSpecialKey(int key, int x, int y) {
 		if (key == GLUT_KEY_UP)
 		{
 			cout << "up" << endl;
-			wpoint0.setY(wpoint0.getY() - 1);
-			wpoint1.setY(wpoint1.getY() - 1);
+			/*wpoint0.setY(wpoint0.getY() - 1);
+			wpoint1.setY(wpoint1.getY() - 1);*/
 		}
 		if (key == GLUT_KEY_DOWN)
 		{
 			cout << "down" << endl;
-			wpoint0.setY(wpoint0.getY() + 1);
-			wpoint1.setY(wpoint1.getY() + 1);
+			/*wpoint0.setY(wpoint0.getY() + 1);
+			wpoint1.setY(wpoint1.getY() + 1);*/
 		}
 		if (key == GLUT_KEY_LEFT)
 		{
 			cout << "left" << endl;
-			wpoint0.setY(wpoint0.getX() - 1);
-			wpoint1.setY(wpoint1.getX() - 1);
+			/*wpoint0.setY(wpoint0.getX() - 1);
+			wpoint1.setY(wpoint1.getX() - 1);*/
 		}
 		if (key == GLUT_KEY_RIGHT)
 		{
 			cout << "right" << endl;
-			wpoint0.setY(wpoint0.getX() + 1);
-			wpoint1.setY(wpoint1.getX() + 1);
+			/*wpoint0.setY(wpoint0.getX() + 1);
+			wpoint1.setY(wpoint1.getX() + 1);*/
 		}
 	}
 	drawwindow(wpoint0.getX()-1, wpoint0.getY()-1, wpoint1.getX()-1, wpoint1.getY()-1);

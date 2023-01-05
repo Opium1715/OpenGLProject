@@ -1,46 +1,21 @@
 #include "OpenGl.h"
 
-Point::Point(int x, int y)
-{
-	this->x = x;
-	this->y = y;
-}
-
-int Point::getX()
-{
-	return this->x;
-}
-
-int Point::getY() {
-	return this->y;
-}
-
-void Point::setX(int newx)
-{
-	this->x = newx;
-}
-
-void Point::setY(int newy)
-{
-	this->y = newy;
-}
-
-
-
 vector<Point> points;
 void Display4() {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	
-	glFlush();
+	Refresh();
+	glutSwapBuffers();
 }
 
 double computeBezier(double t, double x, double y,double z, double w ) {
 	return pow(t, 3) * x + pow(t, 2) * y + t * z + w;
 }
 
+
 void Bezier() {
-	double accuracy = 1.0/1000;
+	double accuracy = 1.0/900;
 	for (int i = 1; i <= 1/accuracy; i++)
 	{
 		double t = accuracy*i;
@@ -59,6 +34,11 @@ void Bezier() {
 	}
 }
 
+void drawBezier(std::vector <Point>& ps) {
+	points = ps;
+	Bezier();
+	points.clear();
+}
 
 
 void myMouse(int button, int state, int x,int y) {
@@ -80,17 +60,30 @@ void myMouse(int button, int state, int x,int y) {
 
 		if (points.size()>=4)
 		{
-			/*Bezier();*/
-			B_spline();
+			if (mode == bezier && points.size()==4)
+			{
+				Bezier();
+				Graph g(points,bezier,1,1,1);
+				graphList.push_back(g);
+				cout<<"Bezier结束" << endl;
+				points.clear();
+				glutPostRedisplay();
+			}
+			else if(mode == b_spline)
+			{
+				B_spline();
+			}
 		}
 		glutSwapBuffers();
 	}
 
-	if (button == GLUT_MIDDLE_BUTTON&&state==GLUT_DOWN)
+	if (button == GLUT_MIDDLE_BUTTON&&state==GLUT_DOWN && mode == b_spline)
 	{
-		cout << "清空点集，重新画点" << endl;
+		cout << "B_spline曲线绘画结束" << endl;
+		Graph g(points, b_spline, 1, 1, 1);
+		graphList.push_back(g);
 		points.clear();
-		Display4();
+		glutPostRedisplay();
 	}
 }
 
